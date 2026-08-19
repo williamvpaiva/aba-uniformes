@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ABA Uniformes - Camiseteria dedicada à fabricação de uniformes e camisetas de alta qualidade em Brasília.">
+    <title>ABA Uniformes | Seja único, seja Aba!</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0F172A; /* Deep Navy */
+            --secondary-color: #38BDF8; /* Vibrant Light Blue */
+            --accent-color: #FACC15; /* Warning/Action Yellow */
+            --text-light: #F8FAFC;
+            --text-dark: #1E293B;
+            --bg-light: #F1F5F9;
+            --bg-dark: #020617;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            color: var(--text-light);
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .cta-nav {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 800;
+            transition: var(--transition);
+        }
+
+        .cta-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(250, 204, 21, 0.3);
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(2,6,23,0.9), rgba(15,23,42,0.8)), url('https://images.unsplash.com/photo-1583098316131-ab8a2b53bd1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: var(--text-light);
+            padding: 0 20px;
+            margin-top: 0;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-content h1 span {
+            color: var(--secondary-color);
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-inline: auto;
+            color: #CBD5E1;
+            animation: fadeInUp 1s ease 0.3s backwards;
+        }
+
+        .cta-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-decoration: none;
+            transition: var(--transition);
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+
+        .cta-main:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(250, 204, 21, 0.4);
+        }
+
+        /* Differentials */
+        .features {
+            padding: 6rem 5%;
+            background: var(--text-light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            font-weight: 800;
+        }
+        
+        .section-title span {
+            color: var(--secondary-color);
+        }
+
+        .grid-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid #E2E8F0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border-color: var(--secondary-color);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* Products Models */
+        .models {
+            padding: 6rem 5%;
+            background: var(--bg-light);
+        }
+
+        .grid-models {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .model-card {
+            background: var(--text-light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .model-img {
+            height: 250px;
+            background: #CBD5E1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #94A3B8;
+        }
+
+        .model-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .model-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary-color);
+            color: var(--text-light);
+        }
+
+        /* About Us */
+        .about {
+            padding: 6rem 5%;
+            background: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #CBD5E1;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links h4 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #CBD5E1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #64748B;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; /* Em produção seria um menu hamburger */
+            }
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo"><i class="fa-solid fa-shirt"></i> ABA<span>Uniformes</span></a>
+        <nav>
+            <ul>
+                <li><a href="#modelos">Modelos</a></li>
+                <li><a href="#quemsomos">Quem Somos</a></li>
+            </ul>
+        </nav>
+        <a href="https://wa.link/au12v4" class="cta-nav" target="_blank">Fazer Orçamento</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Seja único, <span>seja Aba!</span></h1>
+            <p>Uniformes e camisetas que fazem a diferença. Nossa paixão é criar peças de alta qualidade, conforto e estilo para sua empresa ou evento em Brasília.</p>
+            <a href="https://wa.link/au12v4" class="cta-main" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento
+            </a>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2 class="section-title">Por que escolher a <span>ABA</span>?</h2>
+        <div class="grid-features">
+            <div class="feature-card">
+                <i class="fa-solid fa-star feature-icon"></i>
+                <h3>Alta Qualidade</h3>
+                <p>Uniformes confeccionados com materiais de primeira linha, garantindo durabilidade e conforto.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-boxes-stacked feature-icon"></i>
+                <h3>Pedidos Flexíveis</h3>
+                <p>Atendemos a partir de 10 unidades, ideal para pequenas e grandes equipes.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-pen-nib feature-icon"></i>
+                <h3>Bordado Exclusivo</h3>
+                <p>Nosso ateliê próprio borda a sua logomarca com perfeição e precisão em cada detalhe.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-truck-fast feature-icon"></i>
+                <h3>Entrega Rápida</h3>
+                <p>Entregamos para todo o Brasil em até 10 dias úteis com total segurança.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="modelos" class="models">
+        <h2 class="section-title">Conheça nossos <span>Modelos</span></h2>
+        <div class="grid-models">
+            <!-- Modelo 1 -->
+            <div class="model-card">
+                <div class="model-img"><i class="fa-solid fa-user-tie"></i></div>
+                <div class="model-info">
+                    <h3>Linha Empresa & Operacional</h3>
+                    <a href="https://wa.link/au12v4" class="btn-outline" target="_blank">Orçar Modelo</a>
+                </div>
+            </div>
+            <!-- Modelo 2 -->
+            <div class="model-card">
+                <div class="model-img"><i class="fa-solid fa-shirt"></i></div>
+                <div class="model-info">
+                    <h3>Gola Redonda & Gola V</h3>
+                    <a href="https://wa.link/au12v4" class="btn-outline" target="_blank">Orçar Modelo</a>
+                </div>
+            </div>
+            <!-- Modelo 3 -->
+            <div class="model-card">
+                <div class="model-img"><i class="fa-solid fa-person-running"></i></div>
+                <div class="model-info">
+                    <h3>Academia, Esporte & Times</h3>
+                    <a href="https://wa.link/au12v4" class="btn-outline" target="_blank">Orçar Modelo</a>
+                </div>
+            </div>
+            <!-- Modelo 4 -->
+            <div class="model-card">
+                <div class="model-img"><i class="fa-solid fa-vest"></i></div>
+                <div class="model-info">
+                    <h3>Inverno, Eventos & Coletes</h3>
+                    <a href="https://wa.link/au12v4" class="btn-outline" target="_blank">Orçar Modelo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quemsomos" class="about">
+        <div class="about-content">
+            <h2 class="section-title" style="color: white;">Quem <span>somos?</span></h2>
+            <p>Localizados em Brasília – DF, somos uma camiseteria dedicada à fabricação de uniformes e camisetas que fazem a diferença. Nossa paixão por criar peças de qualidade, alinhada com um compromisso inabalável com a honestidade, nos posiciona como uma empresa em que você pode confiar.</p>
+            <p>Valorizamos cada etapa do processo de produção, desde a seleção dos melhores materiais até o atendimento ao cliente. Acreditamos que cada detalhe importa e trabalhamos incansavelmente para que nossos produtos sejam sinônimos de durabilidade, conforto e estilo.</p>
+            <br>
+            <a href="https://wa.link/au12v4" class="cta-main" style="background: white; color: var(--primary-color);" target="_blank">
+                <i class="fa-regular fa-comment-dots"></i> Fale com a Gente
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo">ABA Uniformes</div>
+                <p style="color: #94A3B8; margin-top: 1rem;">Seja único, seja Aba! Fornecendo soluções que atendem suas necessidades com responsabilidade e transparência.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/abauniformes_bsb/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/p/Aba-Uniformes-61561543439229/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://wa.link/au12v4" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="#modelos">Modelos Disponíveis</a></li>
+                    <li><a href="#quemsomos">Sobre a ABA</a></li>
+                    <li><a href="https://wa.link/au12v4" target="_blank">Solicitar Orçamento</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contato</h4>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot" style="color: var(--secondary-color);"></i> Brasília - DF</li>
+                    <li><i class="fa-brands fa-whatsapp" style="color: var(--secondary-color);"></i> <a href="https://wa.link/au12v4" target="_blank">Atendimento WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 ABA Uniformes. Todos os direitos reservados. Desenvolvido por AgencIA.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
