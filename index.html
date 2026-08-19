@@ -3,522 +3,691 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ABA Uniformes - Camiseteria dedicada à fabricação de uniformes e camisetas de alta qualidade em Brasília.">
-    <title>ABA Uniformes | Seja único, seja Aba!</title>
+    <meta name="description" content="ABA Uniformes - Sua empresa de cara nova! Fabricação de uniformes e camisetas com qualidade e excelência.">
+    <title>ABA Uniformes | Sua empresa de cara nova!</title>
+    
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary-color: #0F172A; /* Deep Navy */
-            --secondary-color: #38BDF8; /* Vibrant Light Blue */
-            --accent-color: #FACC15; /* Warning/Action Yellow */
-            --text-light: #F8FAFC;
-            --text-dark: #1E293B;
-            --bg-light: #F1F5F9;
-            --bg-dark: #020617;
-            --transition: all 0.3s ease;
+            --brand-orange: #FF6600;
+            --brand-orange-dark: #D95600;
+            --brand-brown: #8A4B1B;
+            --brand-dark: #121212;
+            --brand-dark-gray: #1E1E1E;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-light: #F9FAFB;
+            --white: #FFFFFF;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-main);
             background-color: var(--bg-light);
-            color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .logo-text {
+            font-family: 'Montserrat', sans-serif;
         }
 
         /* Navbar */
         header {
             position: fixed;
-            width: 100%;
             top: 0;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
+            width: 100%;
+            background-color: rgba(30, 30, 30, 0.95);
+            backdrop-filter: blur(8px);
             z-index: 1000;
             padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
-            color: var(--text-light);
-            font-size: 1.8rem;
-            font-weight: 800;
-            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            text-decoration: none;
         }
-        
-        .logo span {
-            color: var(--secondary-color);
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--brand-orange);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 1.2rem;
+        }
+
+        .logo-text {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--brand-orange);
         }
 
         nav ul {
-            list-style: none;
             display: flex;
-            gap: 2rem;
+            list-style: none;
+            gap: 2.5rem;
         }
 
         nav a {
-            color: var(--text-light);
+            color: var(--white);
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             transition: var(--transition);
         }
 
         nav a:hover {
-            color: var(--secondary-color);
+            color: var(--brand-orange);
         }
 
-        .cta-nav {
-            background: var(--accent-color);
-            color: var(--primary-color);
-            padding: 0.6rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 800;
+        .btn-header {
+            background-color: var(--brand-orange);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border-radius: 4px;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
             transition: var(--transition);
+            border: 2px solid var(--brand-orange);
         }
 
-        .cta-nav:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(250, 204, 21, 0.3);
-            color: var(--primary-color);
+        .btn-header:hover {
+            background-color: transparent;
+            color: var(--brand-orange);
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            margin-top: 70px;
+            background: linear-gradient(135deg, #FF7B00 0%, #E65C00 100%);
+            min-height: 80vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(2,6,23,0.9), rgba(15,23,42,0.8)), url('https://images.unsplash.com/photo-1583098316131-ab8a2b53bd1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
-            color: var(--text-light);
-            padding: 0 20px;
-            margin-top: 0;
+            padding: 0 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0,50 C20,30 80,70 100,50 L100,100 L0,100 Z" fill="rgba(255,255,255,0.05)"/></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            width: 100%;
         }
 
         .hero-content h1 {
-            font-size: 4.5rem;
+            color: var(--white);
+            font-size: 4rem;
             font-weight: 800;
-            margin-bottom: 1rem;
-            animation: fadeInDown 1s ease;
-        }
-
-        .hero-content h1 span {
-            color: var(--secondary-color);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
         }
 
         .hero-content p {
-            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.25rem;
             margin-bottom: 2.5rem;
-            max-width: 700px;
-            margin-inline: auto;
-            color: #CBD5E1;
-            animation: fadeInUp 1s ease 0.3s backwards;
+            font-weight: 400;
+            max-width: 90%;
         }
 
-        .cta-main {
+        .btn-main {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: var(--accent-color);
-            color: var(--primary-color);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 800;
+            gap: 12px;
+            background-color: var(--brand-dark);
+            color: var(--white);
+            padding: 1.2rem 2.5rem;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
             text-decoration: none;
             transition: var(--transition);
-            animation: fadeInUp 1s ease 0.6s backwards;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
-        .cta-main:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 30px rgba(250, 204, 21, 0.4);
+        .btn-main:hover {
+            background-color: var(--white);
+            color: var(--brand-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.3);
         }
 
-        /* Differentials */
-        .features {
-            padding: 6rem 5%;
-            background: var(--text-light);
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .section-title {
+        /* Abstract shape behind image */
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.2));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Section Global */
+        .section-header {
             text-align: center;
-            font-size: 2.8rem;
-            color: var(--primary-color);
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--brand-dark);
             font-weight: 800;
-        }
-        
-        .section-title span {
-            color: var(--secondary-color);
-        }
-
-        .grid-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
         }
 
-        .feature-card {
-            background: var(--bg-light);
-            padding: 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            transition: var(--transition);
-            border: 1px solid #E2E8F0;
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background-color: var(--brand-orange);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            border-color: var(--secondary-color);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--secondary-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        /* Products Models */
-        .models {
+        /* Models Section */
+        .models-section {
             padding: 6rem 5%;
-            background: var(--bg-light);
+            background-color: var(--white);
         }
 
-        .grid-models {
+        .models-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .model-card {
-            background: var(--text-light);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            background-color: var(--bg-light);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: center;
             transition: var(--transition);
+            border: 1px solid #E5E7EB;
+            position: relative;
+            overflow: hidden;
         }
 
         .model-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: var(--brand-orange);
         }
 
-        .model-img {
-            height: 250px;
-            background: #CBD5E1;
+        .model-card:hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--brand-orange);
+        }
+
+        .model-image-container {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 1.5rem;
+            background-color: var(--white);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            color: #94A3B8;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            padding: 20px;
         }
 
-        .model-info {
-            padding: 1.5rem;
-            text-align: center;
+        .model-image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
 
-        .model-info h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+        .model-card h3 {
+            font-size: 1.4rem;
+            color: var(--brand-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
         }
 
-        .btn-outline {
+        .btn-card {
             display: inline-block;
-            padding: 0.5rem 1.5rem;
-            border: 2px solid var(--secondary-color);
-            color: var(--secondary-color);
-            text-decoration: none;
+            background-color: var(--brand-brown);
+            color: var(--white);
+            padding: 0.8rem 2rem;
             border-radius: 50px;
             font-weight: 600;
+            text-decoration: none;
             transition: var(--transition);
         }
 
-        .btn-outline:hover {
-            background: var(--secondary-color);
-            color: var(--text-light);
+        .btn-card:hover {
+            background-color: var(--brand-orange);
+            box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
+            transform: translateY(-2px);
         }
 
-        /* About Us */
-        .about {
-            padding: 6rem 5%;
-            background: var(--primary-color);
-            color: var(--text-light);
+        /* Qualities Banner */
+        .qualities {
+            background-color: var(--brand-dark-gray);
+            color: var(--white);
+            padding: 5rem 5%;
         }
 
-        .about-content {
-            max-width: 800px;
+        .qualities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .about-content p {
-            font-size: 1.2rem;
+        .quality-item i {
+            font-size: 3rem;
+            color: var(--brand-orange);
             margin-bottom: 1.5rem;
-            color: #CBD5E1;
+        }
+
+        .quality-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .quality-item p {
+            color: #A0AEC0;
+            font-size: 0.95rem;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 6rem 5%;
+            background-color: var(--bg-light);
+        }
+
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-container p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
         }
 
         /* Footer */
         footer {
-            background: var(--bg-dark);
-            color: var(--text-light);
+            background-color: #000000;
+            color: var(--white);
             padding: 4rem 5% 2rem;
         }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
+        .footer-content {
             max-width: 1200px;
             margin: 0 auto;
-            margin-bottom: 3rem;
-        }
-
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-
-        .social-links {
             display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
         }
 
-        .social-links a {
+        .footer-social {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-social a {
+            color: var(--white);
+            background-color: rgba(255,255,255,0.1);
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.1);
-            color: var(--text-light);
-            text-decoration: none;
+            font-size: 1.5rem;
             transition: var(--transition);
+            text-decoration: none;
         }
 
-        .social-links a:hover {
-            background: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-        
-        .footer-links h4 {
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-        }
-        
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .footer-links a {
-            color: #CBD5E1;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .footer-links a:hover {
-            color: var(--secondary-color);
+        .footer-social a:hover {
+            background-color: var(--brand-orange);
+            transform: translateY(-5px);
         }
 
         .copyright {
+            margin-top: 2rem;
             text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #64748B;
+            width: 100%;
+            max-width: 1200px;
         }
 
-        /* Animations */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Floating WhatsApp Button */
+        .float-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        .float-wa:hover {
+            transform: scale(1.1);
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            .hero-content p {
+                margin-inline: auto;
+            }
+            .hero-image {
+                max-width: 400px;
+                margin: 0 auto;
+            }
             nav ul {
-                display: none; /* Em produção seria um menu hamburger */
+                display: none;
             }
+        }
+        
+        @media (max-width: 576px) {
             .hero-content h1 {
-                font-size: 3rem;
+                font-size: 2.8rem;
             }
-            .section-title {
-                font-size: 2.2rem;
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            .section-header h2 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
-        <a href="#" class="logo"><i class="fa-solid fa-shirt"></i> ABA<span>Uniformes</span></a>
+        <a href="#" class="logo">
+            <div class="logo-icon"><i class="fa-solid fa-shirt"></i></div>
+            <div class="logo-text">ABA <span>Uniformes</span></div>
+        </a>
         <nav>
             <ul>
+                <li><a href="#">Home</a></li>
                 <li><a href="#modelos">Modelos</a></li>
                 <li><a href="#quemsomos">Quem Somos</a></li>
             </ul>
         </nav>
-        <a href="https://wa.link/au12v4" class="cta-nav" target="_blank">Fazer Orçamento</a>
+        <a href="https://wa.link/au12v4" class="btn-header" target="_blank">Fazer Orçamento</a>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Seja único, <span>seja Aba!</span></h1>
-            <p>Uniformes e camisetas que fazem a diferença. Nossa paixão é criar peças de alta qualidade, conforto e estilo para sua empresa ou evento em Brasília.</p>
-            <a href="https://wa.link/au12v4" class="cta-main" target="_blank">
-                <i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento
-            </a>
-        </div>
-    </section>
-
-    <section class="features">
-        <h2 class="section-title">Por que escolher a <span>ABA</span>?</h2>
-        <div class="grid-features">
-            <div class="feature-card">
-                <i class="fa-solid fa-star feature-icon"></i>
-                <h3>Alta Qualidade</h3>
-                <p>Uniformes confeccionados com materiais de primeira linha, garantindo durabilidade e conforto.</p>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Sua empresa de cara nova!</h1>
+                <p>Fabricamos uniformes e camisetas com alto padrão de qualidade para fazer a sua marca se destacar em qualquer ambiente.</p>
+                <a href="https://wa.link/au12v4" class="btn-main" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> Fazer Orçamento
+                </a>
             </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-boxes-stacked feature-icon"></i>
-                <h3>Pedidos Flexíveis</h3>
-                <p>Atendemos a partir de 10 unidades, ideal para pequenas e grandes equipes.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-pen-nib feature-icon"></i>
-                <h3>Bordado Exclusivo</h3>
-                <p>Nosso ateliê próprio borda a sua logomarca com perfeição e precisão em cada detalhe.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-truck-fast feature-icon"></i>
-                <h3>Entrega Rápida</h3>
-                <p>Entregamos para todo o Brasil em até 10 dias úteis com total segurança.</p>
+            <div class="hero-image">
+                <!-- Imagem ilustrativa que remete às camisas polo pretas/laranjas do site original -->
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Uniformes Profissionais ABA" style="border-radius: 20px;">
             </div>
         </div>
     </section>
 
-    <section id="modelos" class="models">
-        <h2 class="section-title">Conheça nossos <span>Modelos</span></h2>
-        <div class="grid-models">
+    <!-- Models Section -->
+    <section id="modelos" class="models-section">
+        <div class="section-header">
+            <h2>Conheça nossos modelos</h2>
+        </div>
+        <div class="models-grid">
             <!-- Modelo 1 -->
             <div class="model-card">
-                <div class="model-img"><i class="fa-solid fa-user-tie"></i></div>
-                <div class="model-info">
-                    <h3>Linha Empresa & Operacional</h3>
-                    <a href="https://wa.link/au12v4" class="btn-outline" target="_blank">Orçar Modelo</a>
+                <div class="model-image-container">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3530/3530182.png" alt="Empresa">
                 </div>
+                <h3>Empresa</h3>
+                <a href="https://wa.link/au12v4" class="btn-card" target="_blank">Fazer Orçamento</a>
             </div>
+            
             <!-- Modelo 2 -->
             <div class="model-card">
-                <div class="model-img"><i class="fa-solid fa-shirt"></i></div>
-                <div class="model-info">
-                    <h3>Gola Redonda & Gola V</h3>
-                    <a href="https://wa.link/au12v4" class="btn-outline" target="_blank">Orçar Modelo</a>
+                <div class="model-image-container">
+                    <img src="https://cdn-icons-png.flaticon.com/512/10360/10360252.png" alt="Operacional">
                 </div>
+                <h3>Operacional</h3>
+                <a href="https://wa.link/au12v4" class="btn-card" target="_blank">Fazer Orçamento</a>
             </div>
+            
             <!-- Modelo 3 -->
             <div class="model-card">
-                <div class="model-img"><i class="fa-solid fa-person-running"></i></div>
-                <div class="model-info">
-                    <h3>Academia, Esporte & Times</h3>
-                    <a href="https://wa.link/au12v4" class="btn-outline" target="_blank">Orçar Modelo</a>
+                <div class="model-image-container">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3340/3340333.png" alt="Gola Redonda">
                 </div>
+                <h3>Gola Redonda</h3>
+                <a href="https://wa.link/au12v4" class="btn-card" target="_blank">Fazer Orçamento</a>
             </div>
+
             <!-- Modelo 4 -->
             <div class="model-card">
-                <div class="model-img"><i class="fa-solid fa-vest"></i></div>
-                <div class="model-info">
-                    <h3>Inverno, Eventos & Coletes</h3>
-                    <a href="https://wa.link/au12v4" class="btn-outline" target="_blank">Orçar Modelo</a>
+                <div class="model-image-container">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3133/3133390.png" alt="Gola V">
                 </div>
+                <h3>Gola V</h3>
+                <a href="https://wa.link/au12v4" class="btn-card" target="_blank">Fazer Orçamento</a>
+            </div>
+
+            <!-- Modelo 5 -->
+            <div class="model-card">
+                <div class="model-image-container">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1893/1893181.png" alt="Esportiva">
+                </div>
+                <h3>Esportiva/Terceirão</h3>
+                <a href="https://wa.link/au12v4" class="btn-card" target="_blank">Fazer Orçamento</a>
+            </div>
+
+            <!-- Modelo 6 -->
+            <div class="model-card">
+                <div class="model-image-container">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2806/2806087.png" alt="Academia">
+                </div>
+                <h3>Academia/Fitness</h3>
+                <a href="https://wa.link/au12v4" class="btn-card" target="_blank">Fazer Orçamento</a>
             </div>
         </div>
     </section>
 
-    <section id="quemsomos" class="about">
-        <div class="about-content">
-            <h2 class="section-title" style="color: white;">Quem <span>somos?</span></h2>
-            <p>Localizados em Brasília – DF, somos uma camiseteria dedicada à fabricação de uniformes e camisetas que fazem a diferença. Nossa paixão por criar peças de qualidade, alinhada com um compromisso inabalável com a honestidade, nos posiciona como uma empresa em que você pode confiar.</p>
-            <p>Valorizamos cada etapa do processo de produção, desde a seleção dos melhores materiais até o atendimento ao cliente. Acreditamos que cada detalhe importa e trabalhamos incansavelmente para que nossos produtos sejam sinônimos de durabilidade, conforto e estilo.</p>
-            <br>
-            <a href="https://wa.link/au12v4" class="cta-main" style="background: white; color: var(--primary-color);" target="_blank">
-                <i class="fa-regular fa-comment-dots"></i> Fale com a Gente
-            </a>
+    <!-- Qualities / Specs -->
+    <section class="qualities">
+        <div class="qualities-grid">
+            <div class="quality-item">
+                <i class="fa-solid fa-medal"></i>
+                <h4>Qualidade</h4>
+                <p>Uniformes e materiais de Alta Qualidade.</p>
+            </div>
+            <div class="quality-item">
+                <i class="fa-solid fa-boxes-packing"></i>
+                <h4>Unidades</h4>
+                <p>Pedido mínimo de 10 Unidades.</p>
+            </div>
+            <div class="quality-item">
+                <i class="fa-solid fa-pen-nib"></i>
+                <h4>Ateliê</h4>
+                <p>Bordamos a sua logo.</p>
+            </div>
+            <div class="quality-item">
+                <i class="fa-solid fa-credit-card"></i>
+                <h4>Pagamento</h4>
+                <p>Pix, Boleto ou Cartão.</p>
+            </div>
+            <div class="quality-item">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h4>Entrega</h4>
+                <p>Para todo Brasil em até 10 dias úteis.</p>
+            </div>
         </div>
     </section>
 
+    <!-- About Section -->
+    <section id="quemsomos" class="about-section">
+        <div class="section-header">
+            <h2>Quem Somos?</h2>
+        </div>
+        <div class="about-container">
+            <p>Localizados em <strong>Brasília – DF</strong>, somos uma camiseteria dedicada à fabricação de uniformes e camisetas que fazem a diferença. Nossa paixão por criar peças de qualidade, alinhada com um compromisso inabalável com a honestidade, nos posiciona como uma empresa que você pode confiar.</p>
+            <p>Valorizamos cada etapa do processo de produção, desde a seleção dos melhores materiais até o atendimento ao cliente. Acreditamos que cada detalhe importa e, por isso, trabalhamos incansavelmente para garantir que nossos produtos sejam sinônimos de durabilidade, conforto e estilo.</p>
+            <p>Nosso compromisso é simples: fornecer produtos de qualidade com um atendimento excepcional. Queremos ser mais do que apenas um fornecedor; queremos ser seu parceiro de confiança, oferecendo soluções que atendam suas necessidades com responsabilidade e transparência.</p>
+            
+            <div style="margin-top: 3rem;">
+                <h3 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; color: var(--brand-orange); margin-bottom: 1.5rem;">Seja único, seja Aba! ✨</h3>
+                <a href="https://wa.link/au12v4" class="btn-main" target="_blank" style="background-color: var(--brand-orange); border-radius: 50px;">
+                    Entrar em Contato
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <div class="footer-grid">
-            <div>
-                <div class="footer-logo">ABA Uniformes</div>
-                <p style="color: #94A3B8; margin-top: 1rem;">Seja único, seja Aba! Fornecendo soluções que atendem suas necessidades com responsabilidade e transparência.</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/abauniformes_bsb/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/p/Aba-Uniformes-61561543439229/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://wa.link/au12v4" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
+        <div class="footer-content">
+            <a href="#" class="logo" style="justify-content: center;">
+                <div class="logo-icon"><i class="fa-solid fa-shirt"></i></div>
+                <div class="logo-text">ABA <span>Uniformes</span></div>
+            </a>
+            
+            <div class="footer-social">
+                <a href="https://www.instagram.com/abauniformes_bsb" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/p/Aba-Uniformes-61561543439229/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://wa.link/au12v4" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
-            <div class="footer-links">
-                <h4>Links Rápidos</h4>
-                <ul>
-                    <li><a href="#modelos">Modelos Disponíveis</a></li>
-                    <li><a href="#quemsomos">Sobre a ABA</a></li>
-                    <li><a href="https://wa.link/au12v4" target="_blank">Solicitar Orçamento</a></li>
-                </ul>
+
+            <div class="copyright">
+                &copy; 2026 ABA Uniformes. Todos os direitos reservados.
             </div>
-            <div class="footer-links">
-                <h4>Contato</h4>
-                <ul>
-                    <li><i class="fa-solid fa-location-dot" style="color: var(--secondary-color);"></i> Brasília - DF</li>
-                    <li><i class="fa-brands fa-whatsapp" style="color: var(--secondary-color);"></i> <a href="https://wa.link/au12v4" target="_blank">Atendimento WhatsApp</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2026 ABA Uniformes. Todos os direitos reservados. Desenvolvido por AgencIA.</p>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.link/au12v4" class="float-wa" target="_blank" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
 </body>
 </html>
